@@ -213,3 +213,8 @@ source $HOME/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline
 
 # Welcome Messageは/etc/motdに書く
 
+# シェルの初回起動時にtmuxを実行
+if [ $SHLVL = 1 ]; then
+    tmux
+fi
+
