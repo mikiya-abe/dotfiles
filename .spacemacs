@@ -54,7 +54,7 @@ values."
      java
      javascript
      lua
-
+     markdown
      ;;php
      python
      ;;ruby
