@@ -27,8 +27,23 @@ SAVEHIST=100000
 setopt no_global_rcs
 
 export PYENV_ROOT="$HOME/.pyenv"
+export BOOST_ROOT="$HOME/boost_1_51_0"
+
+
+# CUDA
+export CUDA_ROOT=/usr/local/cuda
 
 path=(
+    # juman/knp
+    $HOME/usr/bin(N-/)
+    #CUDA
+    $CUDA_ROOT/bin(N-/)
+    # powerline-shell
+    $HOME/.local/bin(N-/)
+    # bazel
+    $HOME/bin(N-/)
+    # Anaconda
+    $HOME/anaconda3/bin(N-/)
     # 雑用スクリプト
     $HOME/bin(N-/)
     # /etc/paths に書いてあるもの
@@ -38,6 +53,12 @@ path=(
     /usr/sbin(N-/)
     /sbin(N-/)
 )
+# CUDA
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/lib
+export CPATH=$CPATH:/usr/loca/cuda/include
+export CUDA_INC_DIR=/usr/local/cuda/bin:$CUDA_INC_DIR
 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$BOOST_ROOT
 # 重複パスを登録しない
 typeset -U path cdpath fpath manpath
+. /home/abe/anaconda3/etc/profile.d/conda.sh
