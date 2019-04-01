@@ -26,10 +26,6 @@ cd fonts
 cd ..
 rm -rf fonts
 
-# spacemacs
-echo "Installing spacemacs ..."
-git clone https://github.com/syl20bnr/spacemacs.git ~/dotfiles/.emacs.d
-
 # Zsh
 echo "Change default SHELL to Zsh ..."
 sudo echo "/usr/local/bin/zsh" >> /etc/shells
