@@ -28,7 +28,8 @@ local p_mark="%B%(?,%F{green},%F{red})%(!,#,>)%f%b"
 # 1行表示
 #PROMPT="$p_dir $p_mark "
 # 2行表示
-PROMPT="$p_dir\n$p_mark "
+PROMPT="$p_dir
+$p_mark "
 
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
@@ -125,7 +126,8 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 
 # GNU commands
-alias grep='grep --color=always'
+alias grep='grep --color=always' # find . | grep txt | awk '{system("cat "$0")}'を実行するとエスケープシーケンスまでawkに渡されてしまう
+#alias grep='grep'               # エスケープシーケンスが正しく出力さない場合は--color=alwaysオプションを外す
 alias ls='ls --color=always'
 
 # tmux
@@ -139,8 +141,69 @@ alias ga='git add'
 alias gc='git commit'
 alias gd='git diff'
 
+# others
+alias e='/usr/bin/emacs -nw'
+
 ########################################
 # function
 
 # cdの後にlsを実行
 chpwd() { ls -a }
+
+_peco-select-history() {
+    # historyを番号なし、逆順、最初から表示。
+    # 順番を保持して重複を削除。
+    # カーソルの左側の文字列をクエリにしてpecoを起動
+    # \nを改行に変換
+    BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/\n/')"
+    CURSOR=$#BUFFER             # カーソルを文末に移動
+    zle -R -c                   # refresh
+}
+zle -N _peco-select-history
+bindkey '^R' _peco-select-history
+
+#fgとbgを完全に無視したC-p
+#https://qiita.com/aosho235/items/83e338989b901b99fe35
+_up-line-or-history-ignoring() {
+    zle up-line-or-history
+    case "$BUFFER" in
+        fg|bg)
+            zle up-line-or-history
+            ;;
+    esac
+}
+zle -N _up-line-or-history-ignoring
+bindkey '^P' _up-line-or-history-ignoring
+
+#同様にfgとbgを完全に無視したC-n
+_down-line-or-history-ignoring() {
+    zle down-line-or-history
+    case "$BUFFER" in
+        fg|bg)
+            zle down-line-or-history
+            ;;
+    esac
+}
+zle -N _down-line-or-history-ignoring
+bindkey '^N' _down-line-or-history-ignoring
+
+function powerline_precmd() {
+    PS1="$(powerline-shell --shell zsh $?)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
+
+if [ $SHLVL = 1 ]; then
+    tmux
+fi
