@@ -147,6 +147,14 @@ alias gl='git log'
 alias ga='git add'
 alias gc='git commit'
 alias gd='git diff'
+alias gb='git branch'
+
+# docker
+alias d='docker'
+alias dimg='docker image'
+alias dc='docker container'
+alias dcls='docker container ls'
+alias dcla='docker container ls -a'
 
 # グローバルエイリアス
 alias -g L='| less'
