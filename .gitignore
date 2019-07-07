@@ -1,11 +1,11 @@
 # .emacs.d
-/elpa/
-/eshell/
-/transient/
-/auto-save-list
-/games
-/recentf
-/tramp
-/projectile-bookmarks.eld
-/network-security.data
+elpa/
+eshell/
+transient/
+games/
+auto-save-list
+recentf
+tramp
+projectile-bookmarks.eld
+network-security.data
 *~
