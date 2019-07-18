@@ -6,7 +6,6 @@
       (list
        '(:eval (list (nyan-create)))
        ))
-(when window-system-
-(nyan-mode)
+(if window-system (nyan-mode 1))
 
 ;;; 040-mode-line.el ends here

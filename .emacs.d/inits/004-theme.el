@@ -20,7 +20,7 @@
 ;; その他細かい色の設定
 (set-face-background 'linum nil)
 (set-face-foreground 'linum "#999999")
-(set-face-background 'default "uncertified-bg"
+;;(set-face-background 'default "uncertified-bg")
 
 ;; comment & doc (see also 'font-lock-string-face)
 (set-face-foreground 'font-lock-comment-face "#8292c4")

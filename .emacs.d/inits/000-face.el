@@ -21,6 +21,9 @@
 ;; ツールバーを非表示にする
 (tool-bar-mode 0)
 
+;; "^L"を罫線として表示
+(page-break-lines-mode)
+
 ;; Beacon
 (use-package beacon
              :custom
