@@ -30,6 +30,7 @@ SAVEHIST=100000
 setopt no_global_rcs
 
 export PYENV_ROOT="$HOME/.pyenv"
+export SPRING_HOME="$HOME/lib/spring-2.1.6.RELEASE/"
 
 path=(
     # X11
@@ -46,6 +47,8 @@ path=(
     $HOME/.local/bin(N-/)
     #Rust
     $HOME/.cargo/bin(N-/)
+    # spring
+    $SPRING_HOME/bin(N-/)
     # 雑用スクリプト
     $HOME/bin(N-/)
     # /etc/paths に書いてあるもの

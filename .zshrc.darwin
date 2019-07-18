@@ -151,19 +151,15 @@ alias gb='git branch'
 
 # docker
 alias d='docker'
+alias dp='docker ps'
+alias dpa='docker ps -a'
 alias dimg='docker image'
 alias dc='docker container'
-alias dcls='docker container ls'
-alias dcla='docker container ls -a'
 
 # グローバルエイリアス
 alias -g L='| less'
 alias -g G='| grep --color=always'
 alias -g C='| pbcopy'
-
-# virtualenv
-alias sac='source .env/bin/activate'
-alias deac='deactivate'
 
 
 ########################################
