@@ -39,7 +39,7 @@
  '(doom-themes-enable-italic t)
  '(package-selected-packages
    (quote
-    (flycheck-color-mode-line restart-emacs dashboard rainbow-delimiters doom-modeline ivy-rich beacon git-gutter projectile dashboard-project-status company-box company-lsp company ivy magit neotree doom-themes ac-helm websocket web-server uuidgen powerline package-utils nyan-mode init-loader flycheck dracula-theme))))
+    (which-key spinner lsp-mode use-package page-break-lines flycheck-color-mode-line restart-emacs dashboard rainbow-delimiters doom-modeline ivy-rich beacon git-gutter projectile dashboard-project-status company-box company-lsp company ivy magit neotree doom-themes ac-helm websocket web-server uuidgen powerline package-utils nyan-mode init-loader flycheck dracula-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

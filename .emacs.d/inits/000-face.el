@@ -22,7 +22,7 @@
 (tool-bar-mode 0)
 
 ;; "^L"を罫線として表示
-(page-break-lines-mode)
+(page-break-lines-mode t)
 
 ;; Beacon
 (use-package beacon

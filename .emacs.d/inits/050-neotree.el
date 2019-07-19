@@ -7,10 +7,14 @@
     projectice
     :commands
     (neotree-show neotree-hide neotree-dir neotree-find)
+    :bind
+    ([f8] . 'neotree-toggle)
     :custom
     (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
     (setq neo-smart-open t)
-    (setq neo-show-hidden-files t))
+    (setq neo-show-hidden-files t)
+    
+    )
 
 (if window-system (use-package all-the-icons))
 
