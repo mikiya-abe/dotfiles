@@ -1,8 +1,0 @@
-;;; 01-savefile.el --- something related to saving file
-;;; Commentary:
-;;; Code:
-
-;; 警告音を消す
-(setq visible-bell t)
-
-;;; 012-savefile.el ends here
