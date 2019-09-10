@@ -26,14 +26,10 @@ cd fonts
 cd ..
 rm -rf fonts
 
-# spacemacs
-echo "Installing spacemacs ..."
-git clone https://github.com/syl20bnr/spacemacs.git ~/dotfiles/.emacs.d
-
 # Zsh
 echo "Change default SHELL to Zsh ..."
 sudo echo "/usr/local/bin/zsh" >> /etc/shells
-chsh -s /usr/local/bin/zsh
+chsh -sf /usr/local/bin/zsh
 
 # Symbolic links
 echo "Creating symbolic links ..."
@@ -54,4 +50,3 @@ do
     fi
 done
 
-exit 0
