@@ -24,6 +24,9 @@
 ;; "^L"を罫線として表示
 (page-break-lines-mode t)
 
+;; which-key
+(which-key-mode 1)
+
 ;; Beacon
 (use-package beacon
              :custom

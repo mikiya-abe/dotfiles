@@ -1,1 +1,0 @@
-/Users/mikiya.abe/.config/brewfile/Brewfile

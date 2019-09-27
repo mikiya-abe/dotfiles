@@ -9,3 +9,5 @@ tramp
 projectile-bookmarks.eld
 network-security.data
 *~
+.emacs.d/.persistent-scratch
+automatic_backups/

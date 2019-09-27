@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bxin/sh
 
 if [[ `uname` == "Darwin" ]]; then
     # Command Line Tools
@@ -12,10 +12,10 @@ if [[ `uname` == "Darwin" ]]; then
         echo "Downloading HomeBrew ..."
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
+
     # Brewfileを使ってもろもろインストール
-    brew install caskroom/cask/brew-cask
-    brew tap Homebrew/bundle
-    brew bundle
+    ln -s ~/dotfiles/Brewfile ~/.config/brewfile/Brewfile
+    brew-file install
 fi
 
 # Powerline fonts
@@ -25,10 +25,6 @@ cd fonts
 ./install.sh
 cd ..
 rm -rf fonts
-
-# spacemacs
-echo "Installing spacemacs ..."
-git clone https://github.com/syl20bnr/spacemacs.git ~/dotfiles/.emacs.d
 
 # Zsh
 echo "Change default SHELL to Zsh ..."
@@ -47,11 +43,10 @@ do
 
     if echo "$f" | grep ".zsh" >/dev/null; then
         if [[ `uname` == "Darwin" ]]; then
+            mkdir ~/.config
             ln -s $HOME/dotfiles/$f $HOME/${f%%.darwin}
         elif [[ `uname` == "Linux" ]]; then
             ln -s $HOME/dotfiles/$f $HOME/${f%%.linux}
         fi
     fi
 done
-
-exit 0
