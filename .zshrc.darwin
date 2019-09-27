@@ -120,7 +120,8 @@ alias sudo='sudo '
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la'
-alias rm='rm -i'
+# alias rm='rm -i'
+alias rm='rmtrash'
 alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
@@ -207,6 +208,7 @@ _peco-select-history() {
 zle -N _peco-select-history
 bindkey '^R' _peco-select-history
 
+function git(){hub "$@"}
 
 #############################################
 # Additional settings
