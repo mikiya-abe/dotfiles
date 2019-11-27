@@ -39,6 +39,21 @@ zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
 ########################################
+# VCS
+
+autoload -Uz vcs_info
+setopt prompt_subst
+
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+
+precmd () { vcs_info }
+RPROMPT='${vcs_info_msg_0_}'
+
+########################################
 # 補完
 
 # 補完機能を有効にする
@@ -52,11 +67,16 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' ignore-parents parent pwd ..
 
 # sudo の後ろでコマンド名を補完する
-zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
-                   /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
 
 # ps コマンドのプロセス名補完
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
+
+# 補完候補をハイライト
+zstyle ':completion:*:default' menu select=1
+
+# キャッシュの利用による補完の高速化
+zstyle ':completion::complete:*' use-cache true
 
 ########################################
 # オプション
@@ -134,8 +154,6 @@ alias sed='gsed'
 EMACS_PATH=`which emacs`
 alias e='$EMACS_PATH -nw'
 alias ee='$EMACS_PATH'
-alias v='/usr/bin/vim'
-#alias vsc='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 
 # tmux
 alias tk='tmux kill-session'
@@ -152,11 +170,7 @@ alias gd='git diff'
 alias -g L='| less'
 alias -g G='| grep --color=always'
 alias -g C='| pbcopy'
-
-# virtualenv
-alias sac='source .env/bin/activate'
-alias deac='deactivate'
-
+alias -g P='pbpaste >'
 
 ########################################
 # function
