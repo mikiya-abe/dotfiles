@@ -34,4 +34,7 @@
              :config
              (if window-system (beacon-mode 1)))
 
+;; git-gutter
+(global-git-gutter-mode t)
+
 ;;; 000-face.el ends here

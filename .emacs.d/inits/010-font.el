@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-
-(add-to-list 'default-frame-alist '(font . "Source Code Pro for Powerline"))
+(add-to-list 'default-frame-alist '(font . "Source Code Pro for Powerline-13"))
 
 ;;; 010-font.el ends here

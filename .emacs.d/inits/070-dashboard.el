@@ -4,9 +4,9 @@
 
 (use-package dashboard
   :ensure t
-  :init
-  (dashboard-setup-startup-hook)
+  :if (< (length command-line-args) 2)
   :config
+  (dashboard-setup-startup-hook)
   ;; Set the title
   (setq dashboard-banner-logo-title "Welcome to Emacs!")
   ;; Set the banner
