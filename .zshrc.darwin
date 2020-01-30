@@ -145,6 +145,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 
+alias date='LC_ALL=c date'
+
 # GNU commands
 alias grep='ggrep --color=always'
 alias ls='gls --color=always'
