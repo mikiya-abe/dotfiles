@@ -25,7 +25,12 @@
 (page-break-lines-mode t)
 
 ;; which-key
-(which-key-mode 1)
+;;(which-key-mode 1)
+(use-package which-key
+  :diminish which-key-mode
+  :init
+  (which-key-setup-side-window-right-bottom) ;; 画面幅によって右端または下部に表示
+  (which-key-mode t))
 
 ;; Beacon
 (use-package beacon
@@ -35,6 +40,6 @@
              (if window-system (beacon-mode 1)))
 
 ;; git-gutter
-(global-git-gutter-mode t)
+;;(global-git-gutter-mode t)
 
 ;;; 000-face.el ends here

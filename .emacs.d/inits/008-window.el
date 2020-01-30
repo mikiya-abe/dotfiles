@@ -2,11 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 
-;; ウィンドウサイズ
+;; 起動時のフレーム設定
 (setq default-frame-alist
       (append (list
-               '(width . 117)
-               '(height . 80)
+               '(top . -1)
+               '(width . 140)
+               '(height . 40)
                )
               default-frame-alist))
 
