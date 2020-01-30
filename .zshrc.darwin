@@ -161,7 +161,7 @@ alias tk='tmux kill-session'
 # git
 alias gs='git status'
 alias gp='git push'
-alias gl='git log'
+alias gl='git log --pretty=fuller'
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
