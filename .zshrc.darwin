@@ -15,6 +15,16 @@ colors
 # emacs 風キーバインドにする
 bindkey -e
 
+# VCSの設定
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+
 # プロンプト
 # %B...%b     : %Bと%bの間を太字にする
 # %F{color}%f : %Fと%fの間の文字ををcolorにする
@@ -27,6 +37,7 @@ local p_dir="%F{yellow}[%n@%~]%f"
 local p_mark="%B%(?,%F{green},%F{red})%(!,#,>)%f%b"
 # 1行表示
 PROMPT="$p_dir $p_mark "
+RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 # 2行表示
 #PROMPT="$p_dir\n$p_mark "
 
@@ -37,6 +48,9 @@ select-word-style default
 # / も区切りと扱うので、^W でディレクトリ１つ分を削除できる
 zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
+
+# iTermのTabBarにカレントディレクトリのパスを表示する
+eval 'echo -ne "\033]0;`basename \`realpath .\``\007"'
 
 ########################################
 # 補完
@@ -132,7 +146,7 @@ alias ls='gls --color=always'
 alias sed='gsed'
 
 # Editor
-EMACS_PATH=`which emacs`
+EMACS_PATH="/usr/local/bin/emacs"
 alias e='$EMACS_PATH -nw'
 alias ee='$EMACS_PATH'
 alias v='/usr/bin/vim'
@@ -141,14 +155,21 @@ alias v='/usr/bin/vim'
 # tmux
 alias tk='tmux kill-session'
 
+# bat instead of cat
+alias cat='bat'
+
 # git
 alias gs='git status'
 alias gp='git push'
 alias gl='git log'
 alias ga='git add'
 alias gc='git commit'
+alias gch='git checkout'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias gb='git branch'
+alias gr='git restore'
+alias gbrm='git branch --merged | egrep -v "\*|develop|master" | xargs git branch -d'
 
 # docker
 alias d='docker'
@@ -157,6 +178,8 @@ alias dpa='docker ps -a'
 alias dimg='docker image'
 alias dc='docker container'
 
+# Xcode
+alias rmderived='\rm -rf ~/Library/Developer/Xcode/DerivedData/*'
 # グローバルエイリアス
 alias -g L='| less'
 alias -g G='| grep --color=always'
@@ -208,7 +231,18 @@ _peco-select-history() {
 zle -N _peco-select-history
 bindkey '^R' _peco-select-history
 
-function git(){hub "$@"}
+# manコマンドに色をつける
+man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;36m") \
+        LESS_TERMCAP_md=$(printf "\e[1;36m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+        man "$@"
+}
 
 #############################################
 # Additional settings

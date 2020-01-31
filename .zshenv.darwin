@@ -31,6 +31,8 @@ setopt no_global_rcs
 
 export PYENV_ROOT="$HOME/.pyenv"
 export SPRING_HOME="$HOME/lib/spring-2.1.6.RELEASE/"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export NVM_DIR="$HOME/.nvm"
 
 path=(
     # X11
@@ -39,16 +41,22 @@ path=(
     /usr/local/opt/coreutils/libexec/gnubin(N-/)
     # rbenv
     $HOME/.rbenv/bin(N-/)
+    $HOME/.rbenv/shims(N-/)
     # pyenv
     PYENV_ROOT/shims(N-/)
-    # nodebrew
-    $HOME/.nodebrew/current/bin(N-/)
     # stack(Haskell)
     $HOME/.local/bin(N-/)
     #Rust
     $HOME/.cargo/bin(N-/)
     # spring
     $SPRING_HOME/bin(N-/)
+    # Android
+    $ANDROID_HOME/emulator(N-/)
+    $ANDROID_HOME/tools(N-/)
+    $ANDROID_HOME/tools/bin(N-/)
+    $ANDROID_HOME/platform-tools(N-/)
+    # fastlane
+    $HOME/.fastlane/bin(N-/)
     # 雑用スクリプト
     $HOME/bin(N-/)
     # /etc/paths に書いてあるもの
@@ -56,7 +64,11 @@ path=(
     /usr/bin(N-/)
     /bin(N-/)
     /usr/sbin(N-/)
-    /sbin(N-/)
+    /sbin(N-/)    
+    # jenv
+    $HOME/.jenv/bin(N-/)
+    # 最後に記述
+    ${path}
 )
 
 # 重複パスを登録しない
@@ -71,3 +83,12 @@ fi
 if command -v rbenv 1>/dev/null 2>&1; then
     eval "$(rbenv init -)"
 fi
+
+# jenv
+if command -v jenv 1>/dev/null 2>&1; then
+    eval "$(jenv init -)"
+fi
+
+# nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
