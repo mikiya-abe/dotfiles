@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;; テーマの読み込み
 (use-package doom-themes
   :custom
   (doom-themes-enable-italic t)       ; if nil, bold is universally disabled
@@ -17,13 +16,21 @@
   (doom-themes-neotree-config)
   (doom-themes-org-config))
 
-;; その他細かい色の設定
-(set-face-background 'linum nil)
-(set-face-foreground 'linum "#999999")
-;;(set-face-background 'default "uncertified-bg")
+;; other options
+;; linum
+(set-face-attribute 'line-number nil
+                    :foreground "#999999")
+(set-face-attribute 'line-number-current-line nil
+                    :foreground "#59f68d")
 
 ;; comment & doc (see also 'font-lock-string-face)
 (set-face-foreground 'font-lock-comment-face "#8292c4")
 (set-face-foreground 'font-lock-doc-face "#8292c4")
+
+;; make vertical-border a little bit brighter
+(set-face-foreground 'vertical-border "#6272a4")
+
+;; cursol
+(set-cursor-color "#62f992")
 
 ;;; 04-theme.el ends here

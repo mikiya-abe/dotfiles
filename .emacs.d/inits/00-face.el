@@ -9,6 +9,12 @@
 ;; (custom-set-faces
 ;;  '(default ((t (:background nil)))))
 
+;;行番号を常に表示する
+(global-display-line-numbers-mode t)
+
+;;行番号をあらかじめ3桁分確保
+(setq linum-format "%3d ")
+
 ;; スクロールを一行ずつにする
 (setq scroll-step 1)
 
@@ -38,7 +44,7 @@
 ;; Beacon
 (use-package beacon
   :custom
-  (beacon-color "purple")
+  (beacon-color "#62f992")
   :config
   (if window-system (beacon-mode 1)))
 
