@@ -159,6 +159,7 @@ alias tk='tmux kill-session'
 alias gs='git status'
 alias gp='git push'
 alias gl='git log'
+alias glp='git log --pretty=fuller'
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
@@ -178,6 +179,8 @@ alias -g P='pbpaste >'
 
 # cdの後にlsを実行
 chpwd() { ls -a }
+
+precmd() { eval 'echo -ne "\033]0;`basename \`pwd\``\007"' }
 
 #fgとbgを完全に無視したC-p
 #https://qiita.com/aosho235/items/83e338989b901b99fe35
