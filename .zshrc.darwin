@@ -134,9 +134,6 @@ bindkey '^R' history-incremental-pattern-search-backward
 ########################################
 # エイリアス
 
-# sudo の後のコマンドでエイリアスを有効にする
-alias sudo='sudo '
-
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la'
@@ -144,8 +141,6 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
-
-alias date='LC_ALL=c date'
 
 # GNU commands
 alias grep='ggrep --color=always'
@@ -163,10 +158,11 @@ alias tk='tmux kill-session'
 # git
 alias gs='git status'
 alias gp='git push'
-alias gl='git log --pretty=fuller'
+alias gl='git log'
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
+alias gcm='git commit -m'
 alias gch='git checkout'
 alias gd='git diff'
 alias gdc='git diff --cached'
@@ -225,10 +221,6 @@ bindkey '^R' _peco-select-history
 
 #############################################
 # Additional settings
-
-# Powerline
-# powerline-daemon -q
-# source $HOME/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Welcome Messageは/etc/motdに書く
 

@@ -8,6 +8,8 @@
 ;; スピードコマンドを有効化
 (setq org-use-speed-commands t)
 
+(add-to-list 'org-speed-commands-user '("d" org-todo "DONE"))
+
 ;; org-babelに使用できる言語を追加する
 (org-babel-do-load-languages 'org-babel-load-languages
     '(

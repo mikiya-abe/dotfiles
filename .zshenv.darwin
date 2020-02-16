@@ -54,6 +54,8 @@ path=(
     /bin(N-/)
     /usr/sbin(N-/)
     /sbin(N-/)
+    # homebrew's sbin
+    /usr/local/sbin(N-/)
 )
 
 # 重複パスを登録しない
