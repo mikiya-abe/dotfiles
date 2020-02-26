@@ -39,7 +39,6 @@ do
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".gitignore" ]] && continue
     [[ "$f" == ".gitmodules" ]] && continue
-    [[ "$f" == ".emacs.d.bak" ]] && continue
 
     if echo "$f" | grep ".zsh" >/dev/null; then
         if [[ `uname` == "Darwin" ]]; then
