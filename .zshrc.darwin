@@ -183,9 +183,10 @@ alias -g P='pbpaste >'
 # function
 
 # cdの後にlsを実行
-chpwd() { ls -a }
-
-precmd() { eval 'echo -ne "\033]0;`basename \`pwd\``\007"' }
+chpwd() {
+  ls -a
+  eval 'echo -ne "\033]0;`basename \`pwd\``\007"'
+}
 
 #fgとbgを完全に無視したC-p
 #https://qiita.com/aosho235/items/83e338989b901b99fe35
