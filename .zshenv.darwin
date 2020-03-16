@@ -15,8 +15,8 @@ export TERM="xterm-256color"
 export LESS='-I -M -R'
 export LESSOPEN='| src-hilite-lesspipe.sh %s'
 export LESSHISTFILE='/dev/null'
-
 export PAGER=less
+export EDITOR='emacsclient -nw'
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history

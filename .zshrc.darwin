@@ -149,8 +149,9 @@ alias sed='gsed'
 
 # Editor
 EMACS_PATH=`which emacs`
-alias e='$EMACS_PATH -nw'
+alias e='emacsclient -nw -a ""'
 alias ee='$EMACS_PATH'
+alias ke='emacsclient -e "(kill-emacs)"'
 
 # tmux
 alias tk='tmux kill-session'
@@ -164,7 +165,7 @@ alias gb='git branch'
 alias gbrm='git branch --merged|egrep -v "\*|develop|master"|xargs git branch -d'
 alias gc='git commit'
 alias gcm='git commit -m'
-alias gch='git checkout'
+alias gsw='git switch'
 alias gd='git diff'
 alias gdw='git diff --word-diff'
 alias gdc='git diff --cached'
@@ -226,6 +227,16 @@ _peco-select-history() {
 }
 zle -N _peco-select-history
 bindkey '^R' _peco-select-history
+
+# emacs daemonが起動していなければ、ホームディレクトリで`emacs --daemon`を実行する
+function estart() {
+  if ! emacsclient -e 0 > /dev/null 2>&1; then
+    cd > /dev/null 2>&1
+    emacs --daemon &> /dev/null
+    cd - > /dev/null 2>&1
+  fi
+}
+estart
 
 
 #############################################
