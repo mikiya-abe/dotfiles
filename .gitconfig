@@ -4,5 +4,6 @@
     email = struuuuggle@gmail.com
 [core]
     excludesfile = ~/.gitignore_global
+    editor = emacsclient -nw
 [color]
   ui = true

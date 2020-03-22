@@ -3,6 +3,7 @@
 ;;
 ;; M-x package-refresh-contents
 ;; M-x package-install-selected-packges
+;; M-x all-the-icons-install-fonts
 ;;
 ;;; Code:
 
@@ -11,12 +12,15 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 
+;; Avoid a bug #34341
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 (require 'package)
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/" ))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (package-initialize)
 
 ;; Load path

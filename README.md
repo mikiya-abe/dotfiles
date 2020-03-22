@@ -1,9 +1,8 @@
 # dotfiles
 
 ## installation
-- Apple Storeにログイン
-- `install.sh`を実行
 ```
+$ ./map.sh
 $ ./install.sh
 ```
 
@@ -53,4 +52,6 @@ Mission ControlとアプリケーションExposeはチェックを入れない�
 ### 設定ファイルをインポートするアプリケーション
 - Alfred
 - iTerm2
+起動後、環境設定 > General > Preferences > "Load preferences from a custom folder or URL"にチェックを入れる。
+`~/dotfiles/Library/Preferences/`を選択。
 - karabiner-elements

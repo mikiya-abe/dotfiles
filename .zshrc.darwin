@@ -148,10 +148,9 @@ alias ls='gls --color=always'
 alias sed='gsed'
 
 # Editor
-EMACS_PATH=`which emacs`
 alias e='emacsclient -nw -a ""'
-alias ee='$EMACS_PATH'
-alias ke='emacsclient -e "(kill-emacs)"'
+alias ee='emacs &'
+alias ekill='emacsclient -e "(kill-emacs)"'
 
 # tmux
 alias tk='tmux kill-session'
@@ -172,9 +171,6 @@ alias gdc='git diff --cached'
 alias gdcw='git diff --cached --word-diff'
 alias gr='git restore'
 alias grs='git restore --staged'
-
-# others
-alias cat='bat'
 
 # グローバルエイリアス
 alias -g C='| pbcopy'
