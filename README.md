@@ -51,11 +51,16 @@ Mission ControlとアプリケーションExposeはチェックを入れない�
 
 ### 設定ファイルをインポートするアプリケーション
 - Alfred
+
 - iTerm2
+
 起動後、環境設定 > General > Preferences > "Load preferences from a custom folder or URL"にチェックを入れる。
 `~/dotfiles/Library/Preferences/`を選択。
+
 - karabiner-elements
+
 - Spectacle
+
 ```shell
 $ ln -sf ~/dotfiles/.config/spectacle/Shortcuts.json ~/Library/Application\ Support/Spectacle/
 ```
