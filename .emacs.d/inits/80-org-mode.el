@@ -2,8 +2,30 @@
 ;;; Commentary:
 ;;; Code:
 
-; Org-captureを呼び出すキーシーケンス
+; ファイルの場所
+(setq org-directory "~/Dropbox/app/Org")
+
+;; Org-captureを呼び出す
 (define-key global-map "\C-cc" 'org-capture)
+
+;; Org-captureのテンプレート
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/Dropbox/org/task.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ("m" "Memo" entry (file+datetree "~/Dropbox/org/memo.org")
+         "* %?\nEntered on %U\n  %i\n  %a")))
+
+(defun show-org-buffer (file)
+  "Show an org-file FILE on the current buffer."
+  (interactive)
+  (if (get-buffer file)
+      (let ((buffer (get-buffer file)))
+        (switch-to-buffer buffer)
+        (message "%s" file))
+    (find-file (concat "~/Dropbox/app/Org/" file))))
+(global-set-key (kbd "C-c RET") '(lambda () (interactive)
+                                 (show-org-buffer "memo.org")))
+
 
 ;; スピードコマンドを有効化
 (setq org-use-speed-commands t)
