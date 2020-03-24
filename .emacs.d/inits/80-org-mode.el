@@ -5,9 +5,6 @@
 ; ファイルの場所
 (setq org-directory "~/Dropbox/app/Org")
 
-;; Org-captureを呼び出す
-(define-key global-map "\C-cc" 'org-capture)
-
 ;; Org-captureのテンプレート
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Dropbox/org/task.org" "Tasks")
@@ -23,14 +20,9 @@
         (switch-to-buffer buffer)
         (message "%s" file))
     (find-file (concat "~/Dropbox/app/Org/" file))))
-(global-set-key (kbd "C-c RET") '(lambda () (interactive)
-                                 (show-org-buffer "memo.org")))
-
 
 ;; スピードコマンドを有効化
 (setq org-use-speed-commands t)
-
-(add-to-list 'org-speed-commands-user '("d" org-todo "DONE"))
 
 ;; org-babelに使用できる言語を追加する
 (org-babel-do-load-languages 'org-babel-load-languages

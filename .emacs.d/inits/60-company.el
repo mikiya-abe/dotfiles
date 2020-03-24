@@ -11,13 +11,6 @@
 (add-hook 'company-mode-hook 'company-box-mode)
 
 (use-package company
-  :bind
-  (:map company-active-map
-        ("C-p" . company-select-previous)
-        ("C-n" . company-select-next)
-        :map company-search-map
-        ("C-p" . company-select-previous)
-        ("C-n" . company-select-next))
   :custom
   (setq company-auto-complete t)
   (setq company-idle-delay 0)
