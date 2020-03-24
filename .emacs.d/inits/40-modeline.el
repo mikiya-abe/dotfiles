@@ -8,9 +8,12 @@
   (doom-modeline-buffer-file-name-style 'file-name)
   (doom-modeline-buffer-encoding nil)
   (doom-modeline-vcs-max-length 30)
+  (doom-modeline-buffer-encoding nil nil nil "Customized with use-package doom-modeline")
+  (doom-modeline-buffer-file-name-style (quote file-name) nil nil "Customized with use-package doom-modeline")
+  (doom-modeline-minor-modes t)
+  (doom-modeline-vcs-max-length 30 nil nil "Customized with use-package doom-modeline")
   :hook
-  (after-init . doom-modeline-mode)
-  )
+  (after-init . doom-modeline-mode))
 
 (if window-system
     (use-package nyan-mode
