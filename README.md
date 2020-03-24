@@ -64,3 +64,7 @@ Mission ControlとアプリケーションExposeはチェックを入れない�
 ```shell
 $ ln -sf ~/dotfiles/.config/spectacle/Shortcuts.json ~/Library/Application\ Support/Spectacle/
 ```
+
+- Vimium
+Options > Backup and Restore > Retore
+`~/dotfiles/.config/vimium/vimium-options.json`をアップロード
