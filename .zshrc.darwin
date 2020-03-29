@@ -172,6 +172,9 @@ alias gdcw='git diff --cached --word-diff'
 alias gr='git restore'
 alias grs='git restore --staged'
 
+# Xcode
+alias derived='rm -rf ~/Library/Developer/Xcode/DerivedData'
+
 # グローバルエイリアス
 alias -g C='| pbcopy'
 alias -g P='pbpaste >'
