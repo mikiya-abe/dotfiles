@@ -18,9 +18,11 @@
 ;; Org-captureを呼び出す
 (define-key global-map "\C-cc" 'org-capture)
 
+;; Org-agendaを呼び出す
+(define-key global-map "\C-ca" 'org-agenda)
+
 ;; memo.orgを開く
-(global-set-key (kbd "C-c RET") '(lambda () (interactive)
-                                   (show-org-buffer "memo.org")))
+(global-set-key (kbd "C-c m") 'open-memo)
 
 ;; org-modeで"d"を押して、タスクの状態をDONEにする
 (add-to-list 'org-speed-commands-user '("d" org-todo "DONE"))
@@ -37,4 +39,4 @@
 ;; TODO
 ;; M-; -> comment-line
 
-;;; 05-keybind.el ends here
+;;; 99-keybind.el ends here

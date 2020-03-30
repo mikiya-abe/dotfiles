@@ -11,3 +11,5 @@ network-security.data
 .persistent-scratch
 amx-items
 *~
+bookmarks
+*.cache

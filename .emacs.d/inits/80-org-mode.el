@@ -2,15 +2,29 @@
 ;;; Commentary:
 ;;; Code:
 
-; ファイルの場所
-(setq org-directory "~/Dropbox/app/Org")
+; ファイルの場%所
+(setq org-directory "~/Dropbox/app/Emacs/Org")
+
+;; org-journal
+(use-package org-journal
+  :ensure t
+  :defer t
+  :custom
+  (org-journal-dir "~/Dropbox/app/Emacs/Org/Journal")
+  (org-journal-date-format "%A, %d %B %Y"))
+
+(defun org-journal-find-location ()
+  (org-journal-new-entry t)
+  (goto-char (point-min)))
 
 ;; Org-captureのテンプレート
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/Dropbox/org/task.org" "Tasks")
+      '(("t" "Todo" entry (file+headline "~/Dropbox/app/Emacs/Org/task.org" "Tasks")
          "* TODO %?\n  %i\n  %a")
-        ("m" "Memo" entry (file+datetree "~/Dropbox/org/memo.org")
-         "* %?\nEntered on %U\n  %i\n  %a")))
+        ("m" "Memo" entry (file+datetree "~/Dropbox/app/Emacs/Org/memo.org")
+         "* %?\nEntered on %U\n  %i\n  %a")
+        ("j" "Journal entry" entry (function org-journal-find-location)
+         "* %(format-time-string org-journal-time-format)%^{Title}\n%i%?")))
 
 (defun show-org-buffer (file)
   "Show an org-file FILE on the current buffer."
@@ -19,7 +33,12 @@
       (let ((buffer (get-buffer file)))
         (switch-to-buffer buffer)
         (message "%s" file))
-    (find-file (concat "~/Dropbox/app/Org/" file))))
+    (find-file (concat "~/Dropbox/app/Emacs/Org/" file))))
+
+(defun open-memo ()
+  "Show an memo.org."
+  (interactive)
+  (show-org-buffer "memo.org"))
 
 ;; スピードコマンドを有効化
 (setq org-use-speed-commands t)

@@ -21,7 +21,8 @@
   (setq dashboard-center-content t)
 
   (setq dashboard-items '((recents  . 10)
-                          (projects . 5)))
+                          (projects . 5)
+                          (agenda . 10)))
   (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))))
 
 (add-to-list 'auto-mode-alist '("\\*dashboard*\\'" . dashboard-mode))
