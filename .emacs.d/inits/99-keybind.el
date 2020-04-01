@@ -24,6 +24,9 @@
 ;; memo.orgを開く
 (global-set-key (kbd "C-c m") 'open-memo)
 
+;; task.orgを開く
+(global-set-key (kbd "C-c t") 'open-task)
+
 ;; org-modeで"d"を押して、タスクの状態をDONEにする
 (add-to-list 'org-speed-commands-user '("d" org-todo "DONE"))
 

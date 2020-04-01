@@ -40,6 +40,11 @@
   (interactive)
   (show-org-buffer "memo.org"))
 
+(defun open-task ()
+  "Show an task.org."
+  (interactive)
+  (show-org-buffer "task.org"))
+
 ;; スピードコマンドを有効化
 (setq org-use-speed-commands t)
 
