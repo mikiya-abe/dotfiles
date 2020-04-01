@@ -5,9 +5,10 @@
 ;; 起動時のフレーム設定
 (setq default-frame-alist
       (append (list
-               '(top . -1)
+               '(top . 200)
+               '(left . 450)
                '(width . 140)
-               '(height . 40)
+               '(height . 50)
                )
               default-frame-alist))
 
