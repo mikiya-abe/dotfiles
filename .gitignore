@@ -13,3 +13,6 @@ amx-items
 *~
 bookmarks
 *.cache
+
+# karabiner
+automatic_backups/
