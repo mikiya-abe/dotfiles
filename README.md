@@ -68,3 +68,6 @@ $ ln -sf ~/dotfiles/.config/spectacle/Shortcuts.json ~/Library/Application\ Supp
 - Vimium
 Options > Backup and Restore > Retore
 `~/dotfiles/.config/vimium/vimium-options.json`をアップロード
+
+## TODO
+- [ ] GUIでポチポチする系の設定をdefaultコマンド経由で行う
