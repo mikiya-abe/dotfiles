@@ -13,6 +13,9 @@
   (org-journal-dir "~/Dropbox/app/Emacs/Org/Journal")
   (org-journal-date-format "%A, %d %B %Y"))
 
+(setq org-todo-keywords
+  '((sequence "TODO" "DOING" "|" "DONE")))
+
 (defun org-journal-find-location ()
   (org-journal-new-entry t)
   (goto-char (point-min)))
@@ -20,7 +23,7 @@
 ;; Org-captureのテンプレート
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Dropbox/app/Emacs/Org/task.org" "Tasks")
-         "* TODO %?\n  %i\n  %a")
+         "* TODO %?\n   %T")
         ("m" "Memo" entry (file+datetree "~/Dropbox/app/Emacs/Org/memo.org")
          "* %?\nEntered on %U\n  %i\n  %a")
         ("j" "Journal entry" entry (function org-journal-find-location)
