@@ -44,7 +44,7 @@
  '(doom-themes-enable-italic t)
  '(package-selected-packages
    (quote
-    (org-journal markdown-preview-eww markdown-preview-mode vimrc-mode all-the-icons-ivy all-the-icons-gnus flycheck-swift ghub all-the-icons-dired volatile-highlights highlight-indent-guides amx ob-swift ob-http ob-kotlin org-preview-html git-gutter+ persistent-scratch highlight2clipboard swift-mode lua-mode docker-compose-mode which-key spinner lsp-mode use-package page-break-lines flycheck-color-mode-line restart-emacs dashboard rainbow-delimiters doom-modeline ivy-rich beacon git-gutter projectile dashboard-project-status company-box company-lsp company ivy magit neotree doom-themes ac-helm websocket web-server uuidgen powerline package-utils nyan-mode init-loader flycheck dracula-theme)))
+    (json-mode org-journal markdown-preview-eww markdown-preview-mode vimrc-mode all-the-icons-ivy all-the-icons-gnus flycheck-swift ghub all-the-icons-dired volatile-highlights highlight-indent-guides amx ob-swift ob-http ob-kotlin org-preview-html git-gutter+ persistent-scratch highlight2clipboard swift-mode lua-mode docker-compose-mode which-key spinner lsp-mode use-package page-break-lines flycheck-color-mode-line restart-emacs dashboard rainbow-delimiters doom-modeline ivy-rich beacon git-gutter projectile dashboard-project-status company-box company-lsp company ivy magit neotree doom-themes ac-helm websocket web-server uuidgen powerline package-utils nyan-mode init-loader flycheck dracula-theme)))
  '(show-paren-style (quote mixed))
  '(show-paren-when-point-in-periphery t)
  '(show-paren-when-point-inside-paren t))
