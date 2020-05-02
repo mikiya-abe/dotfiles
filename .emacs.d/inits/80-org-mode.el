@@ -21,11 +21,22 @@
   (goto-char (point-min)))
 
 ;; Org-captureのテンプレート
+
+;; Template expansion
+;; https://orgmode.org/manual/Template-expansion.html#Template-expansion
+;;
+;; %t: タイムスタンプ(日付のみ)
+;; %T: タイムスタンプ(日付と時刻)
+;; %u: 非アクティブなタイムスタンプ(日付のみ) 非アクティブなタイムスタンプはagendaに影響しない
+;; %U: 非アクティブなタイムスタンプ(日付と時刻)
+;; %?: テンプレートを補完した後のカーソルの位置
+;; %i: リージョンがアクティブな状態でcaptureが呼び出されたときに、挿入されるリージョン
+
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Dropbox/app/Emacs/Org/task.org" "Tasks")
-         "* TODO %?\n   %T")
+         "* TODO %?\n   %U\n  %i\n  ")
         ("m" "Memo" entry (file+datetree "~/Dropbox/app/Emacs/Org/memo.org")
-         "* %?\nEntered on %U\n  %i\n  %a")
+         "* %?\nEntered on %U\n  %i\n  ")
         ("j" "Journal entry" entry (function org-journal-find-location)
          "* %(format-time-string org-journal-time-format)%^{Title}\n%i%?")))
 
@@ -58,6 +69,7 @@
       (swift . t)
       (python . t)
       (kotlin . t)
-      (emacs-lisp . t)))
+      (emacs-lisp . t)
+      (javascript . t)))
 
 ;;; 80-org-mode.el ends here
