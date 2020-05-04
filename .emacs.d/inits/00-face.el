@@ -21,6 +21,9 @@
 ;; メニューを非表示にする
 (menu-bar-mode 0)
 
+;; スクロールバーを非表示にする
+(scroll-bar-mode 0)
+
 ;; ツールバーを非表示にする
 (tool-bar-mode 0)
 

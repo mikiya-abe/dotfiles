@@ -17,7 +17,10 @@
 
 (if window-system
     (use-package nyan-mode
+      :custom
+      (nyan-animate-nyancat t)
       :hook
-      (after-init . nyan-mode)))
+      ;; (after-init . nyan-mode)
+      (doom-modeline-mode . nyan-mode)))
 
 ;;; 40-modeline.el ends here

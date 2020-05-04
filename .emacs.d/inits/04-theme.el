@@ -32,9 +32,9 @@
   ;; comment & doc (see also 'font-lock-string-face)
   (set-face-foreground 'font-lock-comment-face "#8292c4")
   (set-face-foreground 'font-lock-doc-face "#8292c4")
-
-  ;; cursol
-  (set-cursor-color "#62f992")
   )
+
+;; cursol
+(set-cursor-color "#62f992")
 
 ;;; 04-theme.el ends here
