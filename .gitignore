@@ -13,6 +13,7 @@ amx-items
 *~
 bookmarks
 *.cache
+.lsp-session-v1
 
 # karabiner
 automatic_backups/
