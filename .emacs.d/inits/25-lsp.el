@@ -59,4 +59,7 @@
 (smart-jump-setup-default-registers)
 (global-set-key (kbd "s-b") 'smart-jump-go)
 
+(require 'company-sourcekit)
+(add-to-list 'company-backends 'company-sourcekit)
+
 ;;; 25-lsp.el ends here
