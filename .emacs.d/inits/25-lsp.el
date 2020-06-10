@@ -23,7 +23,7 @@
     (lsp-ui-doc-header t)
     (lsp-ui-doc-include-signature t)
     (lsp-ui-doc-position 'top) ;; top, bottom, or at-point
-    (lsp-ui-doc-max-width 150)
+    (lsp-ui-doc-max-width 100)
     (lsp-ui-doc-max-height 30)
     (lsp-ui-doc-use-childframe t)
     (lsp-ui-doc-use-webkit t)
