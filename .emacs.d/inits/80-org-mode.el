@@ -13,6 +13,10 @@
   (org-journal-dir "~/Dropbox/app/Emacs/Org/Journal")
   (org-journal-date-format "%A, %d %B %Y"))
 
+;; org-bullets
+(use-package org-bullets
+      :hook (org-mode . org-bullets-mode))
+
 (setq org-todo-keywords
   '((sequence "TODO" "DOING" "|" "DONE")))
 
@@ -33,11 +37,11 @@
 ;; %i: リージョンがアクティブな状態でcaptureが呼び出されたときに、挿入されるリージョン
 
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/Dropbox/app/Emacs/Org/task.org" "Tasks")
+      '(("t" "✅ Todo" entry (file+headline "~/Dropbox/app/Emacs/Org/task.org" "Tasks")
          "* TODO %?\n   %U\n  %i\n  ")
-        ("m" "Memo" entry (file+datetree "~/Dropbox/app/Emacs/Org/memo.org")
+        ("m" "💡 Memo" entry (file+datetree "~/Dropbox/app/Emacs/Org/memo.org")
          "* %?\nEntered on %U\n  %i\n  ")
-        ("j" "Journal entry" entry (function org-journal-find-location)
+        ("j" "🗓  Journal entry" entry (function org-journal-find-location)
          "* %(format-time-string org-journal-time-format)%^{Title}\n%i%?")))
 
 (defun show-org-buffer (file)
