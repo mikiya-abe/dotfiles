@@ -73,7 +73,6 @@
       (swift . t)
       (python . t)
       (kotlin . t)
-      (emacs-lisp . t)
-      (javascript . t)))
+      (emacs-lisp . t)))
 
 ;;; 80-org-mode.el ends here
