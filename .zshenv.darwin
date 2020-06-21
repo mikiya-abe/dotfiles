@@ -42,8 +42,10 @@ path=(
     $HOME/.nodebrew/current/bin(N-/)
     # stack(Haskell)
     $HOME/.local/bin(N-/)
-    #Rust
+    # Rust
     $HOME/.cargo/bin(N-/)
+    # Go
+    /usr/local/go/bin(N-/)
     # 雑用スクリプト
     $HOME/bin(N-/)
     # /etc/paths に書いてあるもの
