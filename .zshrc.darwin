@@ -123,6 +123,11 @@ setopt extended_glob
 # Disable Loading Global Profiles
 setopt no_global_rcs
 
+# ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
+setopt auto_param_slash
+
+# ファイル名の展開でディレクトリにマッチした場合 末尾に / を付加
+setopt mark_dirs
 
 ########################################
 # キーバインド
