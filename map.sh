@@ -2,6 +2,14 @@
 
 # Symbolic links
 echo "======== Creating symbolic links... ========"
+
+# dotfiles/git/*
+for f in git/.??*
+do
+    ln -sf $HOME/dotfiles/$f $HOME
+done
+
+# dotfiles/*
 for f in .??*
 do
     # symlinkを貼りたくないファイルを以下に書いておく
@@ -14,7 +22,7 @@ do
             [[ "$f" == ".zshenv.linux" ]] && continue
             [[ "$f" == ".zshrc.linux" ]] && continue
 
-            echo "Mapping $f..."            
+            echo "Mapping $f..."
             ln -sf $HOME/dotfiles/$f $HOME/${f%%.darwin}
         elif [[ `uname` == "Linux" ]]; then
             [[ "$f" == ".zshenv.darwin" ]] && continue

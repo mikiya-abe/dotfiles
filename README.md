@@ -71,3 +71,5 @@ Options > Backup and Restore > Retore
 
 ## TODO
 - [ ] GUIでポチポチする系の設定をdefaultコマンド経由で行う
+- [ ] install.shとmap.shの処理を関数に切り分ける
+
