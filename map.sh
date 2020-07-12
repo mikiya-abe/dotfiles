@@ -34,6 +34,13 @@ do
     ln -sf $HOME/dotfiles/$f $HOME/${f##*/}
 done
 
+# dotfiles/vim/*
+for f in vim/.??*
+do
+    echo "Mapping $f..."
+    ln -sf $HOME/dotfiles/$f $HOME/${f##*/}
+done
+
 # dotfiles/*
 for f in .??*
 do
