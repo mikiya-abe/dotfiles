@@ -9,6 +9,24 @@ do
     ln -sf $HOME/dotfiles/$f $HOME
 done
 
+# dotfiles/zsh/*
+for f in zsh/.??*
+do
+    if [[ `uname` == "Darwin" ]]; then
+        [[ "$f" == "zsh/.zshenv.linux" ]] && continue
+        [[ "$f" == "zsh/.zshrc.linux" ]] && continue
+
+        echo "Mapping $f..."
+        ln -sf $HOME/dotfiles/$f $HOME/${${f##*/}%%.darwin}
+    elif [[ `uname` == "Linux" ]]; then
+        [[ "$f" == "zsh/.zshenv.darwin" ]] && continue
+        [[ "$f" == "zsh/.zshrc.darwin" ]] && continue
+
+        echo "Mapping $f..."
+        ln -sf $HOME/dotfiles/$f $HOME/${${f##*/}%%.linux}
+    fi
+done
+
 # dotfiles/*
 for f in .??*
 do
@@ -17,24 +35,8 @@ do
     [[ "$f" == ".gitignore" ]] && continue
     [[ "$f" == ".gitmodules" ]] && continue
 
-    if echo "$f" | grep ".zsh" >/dev/null; then
-        if [[ `uname` == "Darwin" ]]; then
-            [[ "$f" == ".zshenv.linux" ]] && continue
-            [[ "$f" == ".zshrc.linux" ]] && continue
-
-            echo "Mapping $f..."
-            ln -sf $HOME/dotfiles/$f $HOME/${f%%.darwin}
-        elif [[ `uname` == "Linux" ]]; then
-            [[ "$f" == ".zshenv.darwin" ]] && continue
-            [[ "$f" == ".zshrc.darwin" ]] && continue
-
-            echo "Mapping $f..."
-            ln -sf $HOME/dotfiles/$f $HOME/${f%%.linux}
-        fi
-    else
-        echo "Maping $f..."
-        ln -sf $HOME/dotfiles/$f $HOME
-    fi
+    echo "Maping $f..."
+    ln -sf $HOME/dotfiles/$f $HOME
 done
 
 echo "========     Finished mapping!      ========"
