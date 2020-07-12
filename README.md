@@ -59,11 +59,7 @@ Mission ControlとアプリケーションExposeはチェックを入れない�
 
 - karabiner-elements
 
-- Spectacle
-
-```shell
-$ ln -sf ~/dotfiles/.config/spectacle/Shortcuts.json ~/Library/Application\ Support/Spectacle/
-```
+- Rectangle
 
 - Vimium
 Options > Backup and Restore > Retore
@@ -72,4 +68,3 @@ Options > Backup and Restore > Retore
 ## TODO
 - [ ] GUIでポチポチする系の設定をdefaultコマンド経由で行う
 - [ ] install.shとmap.shの処理を関数に切り分ける
-

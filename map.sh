@@ -41,6 +41,8 @@ do
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".gitignore" ]] && continue
     [[ "$f" == ".gitmodules" ]] && continue
+    [[ "$f" == ".spacemacs" ]] && continue
+    [[ "$f" == ".tmux.conf" ]] && continue
 
     echo "Maping $f..."
     ln -sf $HOME/dotfiles/$f $HOME
