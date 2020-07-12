@@ -27,6 +27,13 @@ do
     fi
 done
 
+# dotfiles/bash/*
+for f in bash/.??*
+do
+    echo "Mapping $f..."
+    ln -sf $HOME/dotfiles/$f $HOME/${f##*/}
+done
+
 # dotfiles/*
 for f in .??*
 do
